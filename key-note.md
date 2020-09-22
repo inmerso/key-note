@@ -12,6 +12,16 @@ the following:
 
     nmap -sn 192.168.1.0/24
 
+## Increase sudo password timeout
+If you like to increase timeout of sudo session in terminal, to say 4 hours,
+type:
+
+    sudo visudo
+
+then add the following line:
+
+    Defaults        env_reset, timestamp_timeout=240
+
 
 # Windows
 
