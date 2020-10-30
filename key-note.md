@@ -37,7 +37,7 @@ then add the following line:
 
 # Windows
 
-## Delete directories (including subdirectories and files
+## Delete directories (including subdirectories and files)
 
 Navigate into the directory you want to remove (e.g. _foldername_)
 
