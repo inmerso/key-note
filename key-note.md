@@ -22,6 +22,18 @@ then add the following line:
 
     Defaults        env_reset, timestamp_timeout=240
 
+## Difference between binary files
+    cmp -l file1.bin file2.bin
+
+## Disk usage from current directory
+    du -sh *
+
+## Disk usage per partition
+    df -h
+    
+## Print end of file and follow file updates
+    tail -f temp.log
+
 
 # Windows
 
@@ -32,7 +44,6 @@ Navigate into the directory you want to remove (e.g. _foldername_)
     DEL /F/Q/S *
     CD ..
     RMDIR _foldername_ /Q/S
-
 
 ## Get rid of windows installation on additional drive
 
