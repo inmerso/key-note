@@ -44,3 +44,14 @@ Open the command line with administration priviledges, then:
     icacls F:\Windows /T /grant /administrators:F
     rd /s F:\Windows
 
+## Modify vbox virtual drive (VDI) dimensions
+From host, with virtual machine switched off, show list of virtual disks:
+
+    VBoxManage list hdds
+
+Modify the disk size with:
+
+    VBoxManage modifyhd <uuid/name> --resize <newsize in MB>
+
+Now launch the virtual machine, from guest go to disk manager and expand
+the virtual disk with the size just create but not yet allocated.
