@@ -25,6 +25,15 @@ then add the following line:
 
 # Windows
 
+## Delete directories (including subdirectories and files
+
+Navigate into the directory you want to remove (e.g. _foldername_)
+
+    DEL /F/Q/S *
+    CD ..
+    RMDIR _foldername_ /Q/S
+
+
 ## Get rid of windows installation on additional drive
 
 Say that you want to get rid of data written by another user on an hard drive
