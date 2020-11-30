@@ -68,3 +68,12 @@ Modify the disk size with:
 
 Now launch the virtual machine, from guest go to disk manager and expand
 the virtual disk with the size just create but not yet allocated.
+
+# git
+
+## delete remote branch
+    $ git branch -a
+    remote/origin/_this_
+    $ git push origin --delete _this_
+
+"--delete" can be shortened to "-d".
