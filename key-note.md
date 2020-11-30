@@ -34,6 +34,8 @@ then add the following line:
 ## Print end of file and follow file updates
     tail -f temp.log
 
+## List the top 10 largest file in foldername
+    du -a /foldername/ | sort -n -r | head -n 10
 
 # Windows
 
