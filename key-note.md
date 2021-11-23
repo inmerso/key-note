@@ -69,6 +69,31 @@ Modify the disk size with:
 Now launch the virtual machine, from guest go to disk manager and expand
 the virtual disk with the size just create but not yet allocated.
 
+# Mac OS
+
+## Install homebrew
+```
+$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+```
+
+### Uninstall
+```
+cd `brew --prefix`
+rm -rf Cellar
+brew prune
+rm `git ls-files`
+rm -r Library/Homebrew Library/Aliases Library/Formula Library/Contributions
+rm -rf .git
+rm -rf ~/Library/Caches/Homebrew
+```
+
+## Work with CV
+```
+$ brew doctor
+$ brew install ffmpeg
+$ brew install opencv
+```
+
 # git
 
 ## delete remote branch
