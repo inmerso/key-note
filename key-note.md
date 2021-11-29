@@ -96,6 +96,17 @@ $ brew install opencv
 
 # git
 
+## New repository with existing files
+1. Create new repo on github
+1. Init local
+```
+git init
+git add .
+git commit -m "initial commit"
+```
+1. ``` git remote add origin *url* ```
+1. ```git push origin master```
+
 ## delete remote branch
     $ git branch -a
     remote/origin/_this_
