@@ -94,6 +94,22 @@ $ brew install ffmpeg
 $ brew install opencv
 ```
 
+# python
+Check the system/OS name to determine where the code is running
+```py
+from sys import platform
+
+platform.system()
+
+if platform == "linux" or platform == "linux2":
+    print("I'm Linux")
+elif platform == "darwin":
+    # OS X
+    pass
+elif platform == "win32":
+    print("I'm Windows")
+```
+
 # git
 
 ## New repository with existing files
