@@ -110,6 +110,20 @@ elif platform == "win32":
     print("I'm Windows")
 ```
 
+In python 3.10:
+```py
+from sys import platform
+
+match platform:
+    case "linux" | "linux2":
+        print("I'm Linux")
+    case "darwin":
+        # OS X
+        pass
+    case "win32":
+        print("I'm Windows")
+```
+
 # git
 
 ## New repository with existing files
