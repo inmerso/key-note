@@ -124,6 +124,14 @@ match platform:
         print("I'm Windows")
 ```
 
+### Performance measurement
+```py
+start = time.perf_counter()
+...
+end = time.perf_counter()
+print( end - start )
+```
+
 # git
 
 ## New repository with existing files
