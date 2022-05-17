@@ -129,7 +129,7 @@ match platform:
 start = time.perf_counter()
 ...
 end = time.perf_counter()
-print( end - start )
+print(f"Exp time: {end-start} s")
 ```
 
 # git
