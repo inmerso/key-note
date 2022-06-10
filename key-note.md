@@ -22,6 +22,11 @@ then add the following line:
 
     Defaults        env_reset, timestamp_timeout=240
 
+## Put latest g++
+    sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+    sudo apt update
+    sudo apt install g++-11
+
 ## Difference between binary files
     cmp -l file1.bin file2.bin
 
