@@ -44,6 +44,9 @@ then add the following line:
 
 # Windows
 
+## ```history``` under windows
+    doskey /history
+
 ## Delete directories (including subdirectories and files)
 
 Navigate into the directory you want to remove (e.g. _foldername_)
