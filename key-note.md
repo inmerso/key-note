@@ -77,6 +77,70 @@ Modify the disk size with:
 Now launch the virtual machine, from guest go to disk manager and expand
 the virtual disk with the size just create but not yet allocated.
 
+## Locate files
+
+Typical syntax for find commands look like this:
+
+    find command options startingpath expression
+
+For instance, to locate files based on name or extensions:
+
+    find /home/luca/ -name "*.bak"
+
+Basic examples can be:
+
+    find . -name filename.vhdl
+
+    find /home -name *.p4
+
+    find . -type f -empty
+
+Find all .db files changed by *luca* 6 days ago:
+    
+    find /home -user luca -mtime 6 -iname ".db"
+
+### Optimization options:
+- -O1 (default) based on file name first
+- -O2 file name first, then file type
+- -O3 automatically reorder the search based on efficient use of resources and
+likelihood of success
+
+### Other Options:
+- -maxdepth N: search in subdirectoriess to a level N
+- -iname: case insensitive
+- -not: match negation
+- type:
+    - -type f: search for files
+    - -type d: search for directories
+
+### Apply command to matching content
+
+Example to locate and then process, for instance, alter permissions of the find
+results:
+
+    find . -name "filename.ext" -exec chmod o+r '{}' \;
+
+The same but ask:
+
+    find . name "filename.ext" -exec -ok chmod o+r '{}' \;
+
+Find then delete:
+
+    find . -type f -name "*.bak" -exec rm -f {} \;
+
+or
+
+    find . -type f -name "*.bak" -delete
+
+Search every file then grep the *searchstring* for every matching file, then
+prints them on shell. Curly brakets are the placeholder for *find* results, they
+go inside single-quotes so that grep isn't fiven a misshapen file name.
+Then exec command is ended with a semicolon, which need an escape so that it
+does'nt end up beinng interpreted by the shell.
+
+    find . -type f -exec grep "searchstring" '{}' \; -print
+
+
 # Mac OS
 
 ## Install homebrew
