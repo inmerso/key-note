@@ -49,6 +49,7 @@ then add the following line:
 
 ## Delete directories (including subdirectories and files)
 
+Use CMD as *Administrator*.
 Navigate into the directory you want to remove (e.g. _foldername_)
 
     DEL /F/Q/S *
