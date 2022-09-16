@@ -42,6 +42,9 @@ then add the following line:
 ## List the top 10 largest file in foldername
     du -a /foldername/ | sort -n -r | head -n 10
 
+## Print dmesg as it changes
+    dmesg -wH
+
 # Windows
 
 ## ```history``` under windows
