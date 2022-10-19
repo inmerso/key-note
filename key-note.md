@@ -42,6 +42,18 @@ then add the following line:
 ## List the top 10 largest file in foldername
     du -a /foldername/ | sort -n -r | head -n 10
 
+## Minimum ubuntu setup
+Everything required for compiling basic software written in C and C++.
+
+    sudo apt install build-essential
+
+Then
+
+    snap install code --classic
+    sudo apt install git-all
+    sudo apt install picocom
+    sudo snap install cmake --classic
+
 # Windows
 
 ## ```history``` under windows
