@@ -42,6 +42,9 @@ then add the following line:
 ## List the top 10 largest file in foldername
     du -a /foldername/ | sort -n -r | head -n 10
 
+## Print dmesg as it changes
+    dmesg -wH
+
 ## Minimum ubuntu setup
 Everything required for compiling basic software written in C and C++.
 
@@ -61,6 +64,7 @@ Then
 
 ## Delete directories (including subdirectories and files)
 
+Use CMD as *Administrator*.
 Navigate into the directory you want to remove (e.g. _foldername_)
 
     DEL /F/Q/S *
@@ -217,6 +221,15 @@ end = time.perf_counter()
 print(f"Exp time: {end-start} s")
 ```
 
+# vscode
+
+## Remove empty lines
+1. Ctrl + H (find and replace)
+2. in find box, type regular expression 
+    ^(\s)*$\n
+4. leave replace box empty
+5. Ctrl + Alt + Enter to apply Replace All 
+
 # git
 
 ## New repository with existing files
@@ -236,3 +249,6 @@ git commit -m "initial commit"
     $ git push origin --delete _this_
 
 "--delete" can be shortened to "-d".
+
+## Export commit history
+    $ git log >> history.txt
