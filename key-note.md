@@ -56,6 +56,7 @@ Then
     sudo apt install git-all
     sudo apt install picocom
     sudo snap install cmake --classic
+    sudo apt install python3-pip
 
 # Windows
 
