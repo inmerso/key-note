@@ -57,6 +57,8 @@ Then
     sudo apt install picocom
     sudo snap install cmake --classic
     sudo apt install python3-pip
+    
+    sudo apt install tree
 
 # Windows
 
