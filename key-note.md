@@ -30,10 +30,11 @@ then add the following line:
 ## Difference between binary files
     cmp -l file1.bin file2.bin
 
-## Disk usage from current directory
+## Disk usage 
+### from current directory
     du -sh *
 
-## Disk usage per partition
+### per partition
     df -h
     
 ## Print end of file and follow file updates
@@ -45,7 +46,7 @@ then add the following line:
 ## Print dmesg as it changes
     dmesg -wH
 
-## Minimum ubuntu setup
+## Minimal Ubuntu setup
 Everything required for compiling basic software written in C and C++.
 
     sudo apt install build-essential
