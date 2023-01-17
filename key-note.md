@@ -1,5 +1,26 @@
 # Linux
 
+## Execute command from history
+
+    history
+
+Execute the command calling by its number in _history_ (e.g. 71):
+
+    $ !71
+
+Execute again last command `$ !!` is equivalent to `$ !-1`.
+
+Scrall back and forward history with <kbd>⌃ Ctrl</kbd>+<kbd>P</kbd> and 
+<kbd>⌃ Ctrl</kbd>+<kbd>N</kbd>.
+Reach the end of history with <kbd>⌃ Ctrl</kbd>+<kbd>⇧ Shift</kbd>+<kbd>.</kbd> 
+
+## Get process output
+
+Once you know the PID, with `ps -ax | grep appname`:
+
+    tail -f /proc/<pid>/fd/{0:8}
+
+
 ## Find occupied IPs on the network
 
 You'll need _nmap_ for this
@@ -30,11 +51,10 @@ then add the following line:
 ## Difference between binary files
     cmp -l file1.bin file2.bin
 
-## Disk usage 
-### from current directory
+## Disk usage from current directory
     du -sh *
 
-### per partition
+## Disk usage per partition
     df -h
     
 ## Print end of file and follow file updates
@@ -46,7 +66,7 @@ then add the following line:
 ## Print dmesg as it changes
     dmesg -wH
 
-## Minimal Ubuntu setup
+## Minimum ubuntu setup
 Everything required for compiling basic software written in C and C++.
 
     sudo apt install build-essential
@@ -58,8 +78,6 @@ Then
     sudo apt install picocom
     sudo snap install cmake --classic
     sudo apt install python3-pip
-    
-    sudo apt install tree
 
 # Windows
 
@@ -110,9 +128,7 @@ For instance, to locate files based on name or extensions:
 Basic examples can be:
 
     find . -name filename.vhdl
-
     find /home -name *.p4
-
     find . -type f -empty
 
 Find all .db files changed by *luca* 6 days ago:
@@ -228,13 +244,19 @@ print(f"Exp time: {end-start} s")
 # vscode
 
 ## Remove empty lines
-1. Ctrl + H (find and replace)
+1. <kbd>⌃ Ctrl</kbd> + <kbd>H</kbd> (find and replace)
 2. in find box, type regular expression 
+``` 
     ^(\s)*$\n
+```
 4. leave replace box empty
-5. Ctrl + Alt + Enter to apply Replace All 
+5. <kbd>⌃ Ctrl</kbd> + <kbd>⌥ Alt</kbd> + <kbd>⏎ Enter</kbd> to apply Replace All 
 
 # git
+
+## Where's the origin?
+
+    git remote -v 
 
 ## New repository with existing files
 1. Create new repo on github
