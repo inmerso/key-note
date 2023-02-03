@@ -278,3 +278,9 @@ git commit -m "initial commit"
 
 ## Export commit history
     $ git log >> history.txt
+    
+# fun
+
+Display video in ASCII characters
+
+    mplayer -vo caca <movie_file>
