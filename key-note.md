@@ -281,6 +281,13 @@ git commit -m "initial commit"
     
 # fun
 
-Display video in ASCII characters
+## Display video in ASCII characters
 
     mplayer -vo caca <movie_file>
+    
+## Install file manager
+
+    sudo add-apt-repository ppa:elementary-os/stable
+    sudo apt-get update
+    sudo apt-get install pantheon-files
+
