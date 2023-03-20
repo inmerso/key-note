@@ -115,6 +115,13 @@ Modify the disk size with:
 Now launch the virtual machine, from guest go to disk manager and expand
 the virtual disk with the size just create but not yet allocated.
 
+## Set permission for virtualbox shared folders
+First, configure shared folder, then:
+
+    sudo adduser $USER vboxsf
+
+Then restart.
+
 ## Locate files
 
 Typical syntax for find commands look like this:
