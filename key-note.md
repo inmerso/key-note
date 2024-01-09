@@ -79,6 +79,11 @@ Then
     sudo snap install cmake --classic
     sudo apt install python3-pip
 
+## Notify with sound compilation finished
+```
+make; spd-say 'done'
+```
+
 # Windows
 
 ## ```history``` under windows
