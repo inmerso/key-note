@@ -8,22 +8,22 @@ Execute the command calling by its number in _history_ (e.g. 71):
 
     $ !71
 
-Execute again last command `$ !!` is equivalent to `$ !-1`.
+Execute again last command `$ !!` it is equivalent to `$ !-1`.
 
-Scrall back and forward history with <kbd>⌃ Ctrl</kbd>+<kbd>P</kbd> and 
+Scroll back and forward history with <kbd>⌃ Ctrl</kbd>+<kbd>P</kbd> and 
 <kbd>⌃ Ctrl</kbd>+<kbd>N</kbd>.
-Reach the end of history with <kbd>⌃ Ctrl</kbd>+<kbd>⇧ Shift</kbd>+<kbd>.</kbd> 
+Reach the end of history with <kbd>⌃ Ctrl</kbd>+<kbd>⇧ Shift</kbd>+<kbd>.</kbd>.
 
 ## Get process output
 
-Once you know the PID, with `ps -ax | grep appname`:
+Once you know the PID, with `ps -ax | grep appname`, you can use it:
 
     tail -f /proc/<pid>/fd/{0:8}
 
 
 ## Find occupied IPs on the network
 
-You'll need _nmap_ for this
+You'll need _nmap_ for this. To install it:
 
     sudo snap install nmap
 
@@ -34,8 +34,9 @@ the following:
     nmap -sn 192.168.1.0/24
 
 ## Increase sudo password timeout
-If you like to increase timeout of sudo session in terminal, to say 4 hours,
-type:
+
+If you like to increase timeout of sudo session in terminal, to say 4 hours 
+(240 minutes), type:
 
     sudo visudo
 
@@ -44,29 +45,37 @@ then add the following line:
     Defaults        env_reset, timestamp_timeout=240
 
 ## Put latest g++
+
     sudo add-apt-repository ppa:ubuntu-toolchain-r/test
     sudo apt update
     sudo apt install g++-11
 
 ## Difference between binary files
+
     cmp -l file1.bin file2.bin
 
 ## Disk usage from current directory
+
     du -sh *
 
 ## Disk usage per partition
+
     df -h
     
 ## Print end of file and follow file updates
+
     tail -f temp.log
 
 ## List the top 10 largest file in foldername
+
     du -a /foldername/ | sort -n -r | head -n 10
 
 ## Print dmesg as it changes
+
     dmesg -wH
 
 ## Minimum ubuntu setup
+
 Everything required for compiling basic software written in C and C++.
 
     sudo apt install build-essential
@@ -80,23 +89,30 @@ Then
     sudo apt install python3-pip
 
 ## Notify with sound compilation finished
-```
-make; spd-say 'done'
-```
+
+If you like to have a notification after `make` is done:
+
+    make; spd-say 'done'
+
 
 # Windows
 
 ## ```history``` under windows
-    doskey /history
+
+```bat
+doskey /history
+```
 
 ## Delete directories (including subdirectories and files)
 
 Use CMD as *Administrator*.
 Navigate into the directory you want to remove (e.g. _foldername_)
 
-    DEL /F/Q/S *
-    CD ..
-    RMDIR _foldername_ /Q/S
+```bat
+DEL /F/Q/S *
+CD ..
+RMDIR _foldername_ /Q/S
+```
 
 ## Get rid of windows installation on additional drive
 
@@ -104,11 +120,14 @@ Say that you want to get rid of data written by another user on an hard drive
 (e.g. windows installation on F:\).
 Open the command line with administration priviledges, then:
 
-    takeown /F F:\Windows /R
-    icacls F:\Windows /T /grant /administrators:F
-    rd /s F:\Windows
+```bat
+takeown /F F:\Windows /R
+icacls F:\Windows /T /grant /administrators:F
+rd /s F:\Windows
+```
 
 ## Modify vbox virtual drive (VDI) dimensions
+
 From host, with virtual machine switched off, show list of virtual disks:
 
     VBoxManage list hdds
@@ -121,9 +140,12 @@ Now launch the virtual machine, from guest go to disk manager and expand
 the virtual disk with the size just create but not yet allocated.
 
 ## Set permission for virtualbox shared folders
+
 First, configure shared folder, then:
 
+```sh
     sudo adduser $USER vboxsf
+```
 
 Then restart.
 
@@ -131,63 +153,83 @@ Then restart.
 
 Typical syntax for find commands look like this:
 
-    find command options startingpath expression
+```sh 
+find command options startingpath expression
+```
 
 For instance, to locate files based on name or extensions:
 
-    find /home/luca/ -name "*.bak"
+```sh
+find /home/luca/ -name "*.bak"
+```
 
 Basic examples can be:
 
-    find . -name filename.vhdl
-    find /home -name *.p4
-    find . -type f -empty
+```sh
+find . -name filename.vhdl
+find /home -name *.p4
+find . -type f -empty
+```
 
 Find all .db files changed by *luca* 6 days ago:
-    
-    find /home -user luca -mtime 6 -iname ".db"
+
+```sh    
+find /home -user luca -mtime 6 -iname ".db"
+```
 
 ### Optimization options:
-- -O1 (default) based on file name first
-- -O2 file name first, then file type
-- -O3 automatically reorder the search based on efficient use of resources and
+
+- `-O1` (default) based on file name first
+- `-O2` file name first, then file type
+- `-O3` automatically reorder the search based on efficient use of resources and
 likelihood of success
 
 ### Other Options:
-- -maxdepth N: search in subdirectoriess to a level N
-- -iname: case insensitive
-- -not: match negation
+
+- `-maxdepth N`: search in subdirectoriess to a level N
+- `-iname`: case insensitive
+- `-not`: match negation
 - type:
-    - -type f: search for files
-    - -type d: search for directories
+    - `-type f`: search for files
+    - `-type d`: search for directories
 
 ### Apply command to matching content
 
 Example to locate and then process, for instance, alter permissions of the find
 results:
 
-    find . -name "filename.ext" -exec chmod o+r '{}' \;
+```sh
+find . -name "filename.ext" -exec chmod o+r '{}' \;
+```
 
 The same but ask:
 
-    find . name "filename.ext" -exec -ok chmod o+r '{}' \;
+```sh
+find . name "filename.ext" -exec -ok chmod o+r '{}' \;
+```
 
 Find then delete:
 
-    find . -type f -name "*.bak" -exec rm -f {} \;
+```sh
+find . -type f -name "*.bak" -exec rm -f {} \;
+```
 
 or
 
-    find . -type f -name "*.bak" -delete
+```sh
+find . -type f -name "*.bak" -delete
+```
 
 Search every file then grep the *searchstring* for every matching file, then
-prints them on shell. Curly brakets are the placeholder for *find* results, they
-go inside single-quotes so that grep isn't fiven a misshapen file name.
-Then exec command is ended with a semicolon, which need an escape so that it
-does'nt end up beinng interpreted by the shell.
+prints them on shell.
+Curly brakets are the placeholder for *find* results, they go inside
+single-quotes so that grep isn't fiven a misshapen file name.
+Then `exec` command is ended with a semicolon, which need an escape so that it
+doesn't end up beinng interpreted by the shell.
 
-    find . -type f -exec grep "searchstring" '{}' \; -print
-
+```sh
+find . -type f -exec grep "searchstring" '{}' \; -print
+```
 
 # Mac OS
 
@@ -231,6 +273,7 @@ elif platform == "win32":
 ```
 
 In python 3.10:
+
 ```py
 from sys import platform
 
@@ -245,10 +288,11 @@ match platform:
 ```
 
 ### Performance measurement
+
 ```py
 import time
 start = time.perf_counter()
-...
+# ...code...
 end = time.perf_counter()
 print(f"Exp time: {end-start} s")
 ```
@@ -256,32 +300,37 @@ print(f"Exp time: {end-start} s")
 # vscode
 
 ## Remove empty lines
+
 1. <kbd>⌃ Ctrl</kbd> + <kbd>H</kbd> (find and replace)
-2. in find box, type regular expression 
-``` 
+1. in find box, type regular expression 
+    ```
     ^(\s)*$\n
-```
-4. leave replace box empty
-5. <kbd>⌃ Ctrl</kbd> + <kbd>⌥ Alt</kbd> + <kbd>⏎ Enter</kbd> to apply Replace All 
+    ```
+1. leave replace box empty
+1. <kbd>⌃ Ctrl</kbd> + <kbd>⌥ Alt</kbd> + <kbd>⏎ Enter</kbd> to apply Replace All 
 
 # git
 
 ## Where's the origin?
 
-    git remote -v 
+```
+git remote -v 
+```
 
 ## New repository with existing files
+
 1. Create new repo on github
 1. Init local
-```
-git init
-git add .
-git commit -m "initial commit"
-```
-1. ``` git remote add origin *url* ```
+    ```
+    git init
+    git add .
+    git commit -m "initial commit"
+    ```
+1. ```git remote add origin *url*```
 1. ```git push origin master```
 
 ## delete remote branch
+
     $ git branch -a
     remote/origin/_this_
     $ git push origin --delete _this_
@@ -289,6 +338,7 @@ git commit -m "initial commit"
 "--delete" can be shortened to "-d".
 
 ## Export commit history
+
     $ git log >> history.txt
     
 # fun
