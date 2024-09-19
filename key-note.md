@@ -94,6 +94,12 @@ If you like to have a notification after `make` is done:
 
     make; spd-say 'done'
 
+## Running a full-screen clock
+
+```bash
+    dclock -nobell -nomiltime -tails -noscroll -noblink -nofade -date "%a %b %d, %Y" -noalarm -seconds -bd "black" -bg "black" -fg "red" -led_off "black" &
+```
+
 
 # Windows
 
